@@ -1,0 +1,536 @@
+<html>
+  <head>
+    <title>My Valentine</title>
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+    .centering-block {
+      text-align: center;
+    }
+
+    .centering-block:before {
+      content: '';
+      display: inline-block;
+      height: 50%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
+
+    .centered {
+      display: inline-block;
+      vertical-align: middle;
+      width: 300px;
+    }
+
+    .loader {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      animation: roll_dice 2.2222222222s infinite ease-in;
+    }
+    .loader .square {
+      background-color: #FFFFFF;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      opacity: 1;
+      transition: background-color 0.25s;
+    }
+    .loader .row {
+      width: 68px;
+      margin: 20px auto;
+    }
+    .loader .square_one {
+      animation: square_one 10s infinite;
+    }
+    .loader .square_two {
+      animation: square_two 10s infinite;
+    }
+    .loader .square_three {
+      animation: square_three 10s infinite;
+    }
+    .loader .square_four {
+      animation: square_four 10s infinite;
+    }
+    .loader .square_five {
+      animation: square_five 10s infinite;
+    }
+    .loader .square_six {
+      animation: square_six 10s infinite;
+    }
+    .loader .square_seven {
+      animation: square_seven 10s infinite;
+    }
+    .loader .square_eight {
+      animation: square_eight 10s infinite;
+    }
+    .loader .square_nine {
+      animation: square_nine 10s infinite;
+    }
+
+    @keyframes roll_dice {
+      0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(180deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      75% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes square_one {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: red;
+      }
+      37.5% {
+        background-color: #FFFFFF;
+      }
+      50% {
+        background-color: red;
+      }
+      62.5% {
+        background-color: red;
+      }
+      75% {
+        background-color: red;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_two {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: #FFFFFF;
+      }
+      37.5% {
+        background-color: #FFFFFF;
+      }
+      50% {
+        background-color: #FFFFFF;
+      }
+      62.5% {
+        background-color: #FFFFFF;
+      }
+      75% {
+        background-color: #FFFFFF;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_three {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: #FFFFFF;
+      }
+      37.5% {
+        background-color: red;
+      }
+      50% {
+        background-color: red;
+      }
+      62.5% {
+        background-color: red;
+      }
+      75% {
+        background-color: red;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_four {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: #FFFFFF;
+      }
+      32.5% {
+        background-color: #FFFFFF;
+      }
+      50% {
+        background-color: #FFFFFF;
+      }
+      62.5% {
+        background-color: #FFFFFF;
+      }
+      75% {
+        background-color: red;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_five {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: red;
+      }
+      25% {
+        background-color: #FFFFFF;
+      }
+      37.5% {
+        background-color: red;
+      }
+      50% {
+        background-color: #FFFFFF;
+      }
+      62.5% {
+        background-color: red;
+      }
+      75% {
+        background-color: #FFFFFF;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_six {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: #FFFFFF;
+      }
+      37.5% {
+        background-color: #FFFFFF;
+      }
+      50% {
+        background-color: #FFFFFF;
+      }
+      62.5% {
+        background-color: #FFFFFF;
+      }
+      75% {
+        background-color: red;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_seven {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: #FFFFFF;
+      }
+      37.5% {
+        background-color: red;
+      }
+      50% {
+        background-color: red;
+      }
+      62.5% {
+        background-color: red;
+      }
+      75% {
+        background-color: red;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_eight {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: #FFFFFF;
+      }
+      37.5% {
+        background-color: #FFFFFF;
+      }
+      50% {
+        background-color: #FFFFFF;
+      }
+      62.5% {
+        background-color: #FFFFFF;
+      }
+      75% {
+        background-color: #FFFFFF;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+    @keyframes square_nine {
+      0% {
+        background-color: #FFFFFF;
+      }
+      12.5% {
+        background-color: #FFFFFF;
+      }
+      25% {
+        background-color: red;
+      }
+      37.5% {
+        background-color: #FFFFFF;
+      }
+      50% {
+        background-color: red;
+      }
+      62.5% {
+        background-color: red;
+      }
+      75% {
+        background-color: red;
+      }
+      87.5% {
+        background-color: #f2ece4;
+      }
+      100% {
+        background-color: #FFFFFF;
+      }
+    }
+
+          .column {
+            background: #ffa8b0
+          }
+
+    </style>
+    <script>
+    var dice = {
+      1: "True love",
+      2: "Life long relationship", // +
+      3: "Respect",  // +
+      4: "Betrayal", // +
+      5: "Distrust", // +
+      6: "Unhappiness"
+    }
+
+    var diceMeaning = {
+      1: ['Love is when you choose to be at your best when the other person is not at their best. One of the best feelings in the world is, without question, love. We fall into it, seek it out, cherish it, share it — it’s an experience and expression that everyone can understand, regardless of who they are, what language they speak or where they live. Yet, for as universal as love is, it’s also such a complex, powerful emotion that it can be hard to define', 'Love is when what you want is never important. But what the other person needs and wants is always paramount.'],
+      2: ['If you want a vibrant long-term relationship—one in which you feel close as a couple and creative as individuals—you’ve have to do one big thing first. You’ve got to take your attention away from fixing the other person and put it on expressing your own creativity. Even one hour a week of focusing on your own creativity will produce results. More than that will often produce miracles.',
+'If you want a long-term relationship that’s both close and creatively vital, you’ve got to become emotionally transparent. To go all the way to ultimate closeness and full creative expression, you must eliminate all barriers to speaking and hearing the truth about everything. We teach couples how to make love last by listening to the truth about everything from their partners, and we teach them how to speak the truth about everything to their partners. Everything means everything: feelings, deeds, hopes, dreams. We ask them to consider any hesitation about telling or hearing the unvarnished truth to be a symptom of resistance to greater love and creativity.'],
+      3: ['This means that both of you are aware that a person next to you is a human being with his or her own thoughts, beliefs, opinions, wishes, interests, and needs, and that you’re willing to respect them no matter what. Of course, this doesn’t have to mean that you need to forget your own needs and system of beliefs, and that’s what’s truly amazing about being in love with the right person.', 'Respect for each other is one of the most important factors in relationships. It comes from giving each other enough space for personal growth and never crossing the line, no matter what.'],
+      4: ['Couples don’t feel supported when one partner keeps a foot out of the relationship. They don’t feel like their partner has their best interests at heart, that they have their back. When this happens, it’s not uncommon for the betrayed partner to blame a trigger as the real problem, when it’s actually the lack of commitment.', 'A betrayal is a broken agreement, implicit or explicit, that is considered vital to the integrity of a relationship. The capacity of a relationship to recover from a betrayal has a lot to do with the responses, particularly on the part of the betrayer to the situation. The more open and non-defensive they are, the more likely it is that there will be resolution. When both partners are committed to this as an outcome, the likelihood increases exponentially.'],
+      5: ['We can take that path in our relationships with family or friends, but we can’t as a couple. In a couple there is an emotional coexistence where feelings do not follow patterns or rules. At the same time there are opposing forces that push us in opposite directions: from love to distrust and back again.Once we begin to distrust, the secret battles begin. Hidden actions and hidden suspicions. When talking about distrust in the couple the most obvious reason seems to be infidelity. Nothing, however, is further from reality. Mistrust can occur in many of our day to day activities. We can trust our partner in many different areas: our family, their work, our friends, their friends etc. And they can let us down.',
+        'There are so many sub-sections of social media which ruin our relationships. We stalk, we focus on other people’s lives and ultimately end up ignoring our partners, etc. Studies have shown that more frequent social media use and monitoring of one’s partner can lead to misunderstandings and feelings of jealousy. It is also becoming more common in divorce proceedings to use evidence of illicit social media activity to support the case.More arguments are caused by things which we find on social media. Stalking exes, unusual activity, snooping on who our partners have liked the photos of.We are all addicted to our phones and it’s having a real impact on our relationships.'],
+      6: ['When an intimate relationship is no longer healthy – should you jump ship and abandon it, continue to fight for it even though you may be fighting a losing battle, or hold onto the understanding that marriages are imperfect and go through rough patches, but sooner or later things may settle down and improve?', 'Unfortunately, there is no clear cut path to follow that will lead to the right outcome. How you resolve this dilemma will depend on your personal circumstances and the conclusions you reach through a lot of thought.']
+    }
+
+    jQuery(document).ready(function(){
+
+      $("#roll").on("click", function(e) {
+        e.preventDefault();
+        $("#loadMe").modal({
+          backdrop: "static", //remove ability to close modal with click
+          keyboard: false, //remove option to close with keyboard
+          show: true //Display loader!
+        });
+
+
+        var randomDice  = Math.floor(Math.random() * 6) + 1;
+        setTimeout(showResults, 6000, randomDice);
+      });
+
+    });
+
+    function showResults(randomDice) {
+        var yourName = jQuery('#you-full-name').val();
+        var partnerName = jQuery('#partner-full-name').val();
+        var resultsHtml = '';
+        resultsHtml += '<h4>Between ' + yourName + ' and ' + partnerName + ' is <b>' + dice[randomDice] + '</h4></b><br>';
+        var randomMessage  = Math.floor(Math.random() * 2);
+
+
+        resultsHtml += diceMeaning[randomDice][randomMessage];
+
+        $("#result").html(resultsHtml);
+        $("#rollAgain").show();
+        $("#loadMe").modal("hide");
+        $('.info').hide();
+    }
+
+    </script>
+  </head>
+
+  <body>
+    <!-- Modal -->
+  <div class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="loader"></div>
+          <div clas="loader-txt">
+            <h3>The Oracle of Love is getting the results.</h3><br><br>
+            <h5>With love and patience nothing is impossible.</h5>
+
+
+            <div class="container centering-block">
+              <div class="loader centered">
+                <div class="square square_one"></div>
+                <div class="square square_two"></div>
+                <div class="square square_three"></div>
+                <div class="square square_four"></div>
+                <div class="square square_five"></div>
+                <div class="square square_six"></div>
+                <div class="square square_seven"></div>
+                <div class="square square_eight"></div>
+                <div class="square square_nine"></div>
+              </div>
+            </div>
+
+
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container text-center">
+      <h1 style="color:red">The Oracle of Love</h1>
+      <p>The "Oracle of love" will tell you about the attitude of your beloved to you.</p>
+    </div>
+    <br><br>
+
+    <div class="container text-center">
+      <div id="result"></div>
+    </div>
+
+    <form>
+      <div class="container info">
+      <div style="text-align:left">
+        <span class="badge badge-info">Step 1</span> Fill your information<br>
+        <span class="badge badge-info">Step 2</span> Fill the information of the person you are interested in<br>
+        <span class="badge badge-info">Step 3</span> Start by rolling the dice<br>
+      </div><br>
+    </div>
+    <div class="container info">
+      <div class="row">
+        <div class="col-sm column">
+          <h3>You</h3>
+          <div class="form-group row">
+           <label class="col-sm-3">Full Name</label>
+           <div class="col-sm-9">
+             <input type="text" class="form-control" id="you-full-name" required>
+           </div>
+          </div>
+          <div class="form-group row">
+           <label class="col-sm-3">Gender</label>
+           <div class="col-sm-9">
+             <label class="radio-inline"><input type="radio" name="you-gender" checked>Man</label>
+             <label class="radio-inline"><input type="radio" name="you-gender">Woman</label>
+           </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3">Date of Birth</label>
+            <div class='col-sm-9'>
+              <input type='date' class="form-control" id='you-dob' placeholder="Date of Birth" />
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-sm column">
+          <h3>Partner</h3>
+          <div class="form-group row">
+            <label class="col-sm-3">Full Name</label>
+           <div class="col-sm-9">
+             <input type="text" class="form-control" id="partner-full-name" placeholder="" required>
+           </div>
+          </div>
+          <div class="form-group row">
+           <label class="col-sm-3">Gender</label>
+           <div class="col-sm-9">
+             <label class="radio-inline"><input type="radio" name="partner-gender" checked>Man</label>
+             <label class="radio-inline"><input type="radio" name="partner-gender">Woman</label>
+           </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3">Date of Birth</label>
+            <div class='col-sm-9'>
+              <input type='date' class="form-control" id='you-dob' placeholder="Date of Birth" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="container">
+      <div class="row">
+          <div class="col-sm">
+            </div>
+          <div class="col-sm text-center">
+
+              <button type="submit" class="btn btn-danger btn-lg" id="roll">Roll the Dice <i class="far fa-heart"></i></button>
+
+              <button class="btn btn-lg" id="rollAgain" onclick="location.reload();" style="display:none">Start over <i class="fas fa-undo"></i></button>
+
+          </div>
+          <div class="col-sm">
+            </div>
+      </div>
+    </div>
+    </form>
+  </body>
+</html>
